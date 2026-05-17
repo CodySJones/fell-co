@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: fell-and-co
+    runtime: static
+    buildCommand: echo "No build required"
+    staticPublishPath: .
+    autoDeploy: true
