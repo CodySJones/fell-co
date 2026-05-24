@@ -5,13 +5,9 @@
   --muted: #7a6462;
   --line: #cdbdaf;
   --maroon: #77212e;
-  --maroon-dark: #77212e;
   --blue: #b7c9dc;
-  --blue-deep: #b7c9dc;
   --white: var(--cream);
-  --moss: var(--maroon);
-  --terracotta: var(--blue-deep);
-  --charcoal: var(--maroon-dark);
+  --charcoal: var(--maroon);
   --radius: 8px;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", Arial, sans-serif;
@@ -215,25 +211,13 @@ a {
 
 .section-label {
   margin: 0;
-  color: var(--moss);
+  color: var(--maroon);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
-.about-section {
-  border-bottom: 1px solid var(--line);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.72fr);
-  gap: clamp(36px, 8vw, 120px);
-  margin-top: 22px;
-}
-
-.about-grid h2,
 .services-copy h2 {
   margin: 0;
   font-family: var(--serif);
@@ -241,12 +225,6 @@ a {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 0.92;
-}
-
-.about-grid p {
-  margin: 0 0 18px;
-  color: var(--muted);
-  font-size: clamp(17px, 2vw, 21px);
 }
 
 .project-grid {
@@ -599,9 +577,9 @@ a {
   display: inline-flex;
   justify-content: center;
   border-radius: var(--radius);
-  background: var(--blue-deep);
+  background: var(--blue);
   padding: 16px 22px;
-  color: var(--maroon-dark);
+  color: var(--maroon);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -842,7 +820,10 @@ a {
     text-align: center;
   }
 
-  .site-header.menu-open .desktop-nav,
+  .site-header.menu-open .desktop-nav {
+    display: flex;
+  }
+
   .site-header.menu-open .header-cta {
     display: block;
   }
@@ -880,7 +861,6 @@ a {
     padding: 72px 20px;
   }
 
-  .about-grid,
   .project-grid,
   .services-copy,
   .service-list,
