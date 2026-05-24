@@ -38,6 +38,15 @@ img {
   max-width: 100%;
 }
 
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+img[loading="lazy"].is-loaded {
+  opacity: 1;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -80,7 +89,7 @@ a {
   gap: 30px;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -106,7 +115,7 @@ a {
   padding: 12px 18px;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -185,7 +194,7 @@ a {
   gap: 10px;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -214,7 +223,7 @@ a {
   color: var(--maroon);
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -380,6 +389,7 @@ a {
   color: var(--ink);
   font-size: 13px;
   font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -577,11 +587,12 @@ a {
   display: inline-flex;
   justify-content: center;
   border-radius: var(--radius);
-  background: var(--blue);
+  background: var(--cream);
   padding: 16px 22px;
   color: var(--maroon);
   font-size: 13px;
   font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -734,9 +745,13 @@ a {
 
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius);
   object-fit: cover;
+}
+
+.gallery-item.tall img {
+  aspect-ratio: 4 / 5;
 }
 
 .gallery-item.wide img {
@@ -976,5 +991,34 @@ a {
 
   .studio-copy {
     padding: 58px 20px 66px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e0d2c5;
+    --muted: #a89890;
+    --line: #3d2024;
+    --paper: #231015;
+  }
+
+  body,
+  .project-page,
+  .blog-section {
+    background: #18090c;
+  }
+
+  .site-header.is-scrolled,
+  .site-header.menu-open {
+    background: rgba(24, 9, 12, 0.95);
+  }
+
+  .project-header {
+    background: rgba(24, 9, 12, 0.95);
+  }
+
+  .desktop-nav,
+  .header-cta {
+    background: #18090c;
   }
 }
